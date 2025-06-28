@@ -4,7 +4,13 @@ n=$(git config user.name)
 if [ -z "$n" ]; then
     n="NONE"
 fi
-r=$(osascript -e 'tell app "System Events" to display dialog "'"Текущий пользователь Git: $n"'" buttons {"Продолжить", "Отмена"} default button "Продолжить"')
+
+e=$(git config user.email)
+if [ -z "$e" ]; then
+    e="NONE"
+fi
+
+r=$(osascript -e 'tell app "System Events" to display dialog "'"Текущий пользователь Git: $n\nEmail: $e"'" buttons {"Продолжить", "Отмена"} default button "Продолжить"')
 if [ "$r" = "button returned:Продолжить" ]; then
     echo "Подтверждение текущего пользователя Git"
 else

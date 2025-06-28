@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/darkjinnee/mac-githooks/compare/v1.0.0...v1.1.0) (2025-06-28)
+
+
+### Features
+
+* include current user email in confirmation dialog ([d414146](https://github.com/darkjinnee/mac-githooks/commit/d4141461799c05ce941de3742bc1ccecaf04be0f))
+
 ## 1.0.0 (2024-03-29)
 
 

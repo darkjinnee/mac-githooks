@@ -10,9 +10,14 @@ if [ -z "$e" ]; then
     e="NONE"
 fi
 
-r=$(osascript -e 'tell app "System Events" to display dialog "'"Текущий пользователь Git: $n\nEmail: $e"'" buttons {"Продолжить", "Отмена"} default button "Продолжить"')
+s=$(git config user.signingkey)
+if [ -z "$s" ]; then
+    s="NONE"
+fi
+
+r=$(osascript -e 'tell app "System Events" to display dialog "'"Текущий пользователь GIT\n\nname: $n\nemail: $e\nsigningkey: $s"'" buttons {"Продолжить", "Отмена"} default button "Продолжить"')
 if [ "$r" = "button returned:Продолжить" ]; then
-    echo "Подтверждение текущего пользователя Git"
+    echo "Подтверждение текущего пользователя GIT"
 else
    exit 1;
 fi

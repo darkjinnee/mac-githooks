@@ -15,7 +15,16 @@ if [ -z "$s" ]; then
     s="NONE"
 fi
 
-r=$(osascript -e 'tell app "System Events" to display dialog "'"Текущий пользователь GIT\n\nname: $n\nemail: $e\nsigningkey: $s"'" buttons {"Продолжить", "Отмена"} default button "Продолжить"')
+r=$(osascript -e '
+tell application "System Events"
+    set frontApp to name of first application process whose frontmost is true
+end tell
+tell application "System Events"
+    set r to display dialog "'"Текущий пользователь GIT\n\nname: $n\nemail: $e\nsigningkey: $s"'" buttons {"Продолжить", "Отмена"} default button "Продолжить"
+end tell
+tell application frontApp to activate
+return r
+')
 if [ "$r" = "button returned:Продолжить" ]; then
     echo "Подтверждение текущего пользователя GIT"
 else

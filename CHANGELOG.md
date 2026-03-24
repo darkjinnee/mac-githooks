@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0](https://github.com/darkjinnee/mac-githooks/compare/v1.2.0...v1.3.0) (2026-03-24)
+
+
+### Features
+
+* add back focus ([79b97d8](https://github.com/darkjinnee/mac-githooks/commit/79b97d83a6a34285f44b5393a0c4bc26bf3ce655))
+
 ## [1.2.0](https://github.com/darkjinnee/mac-githooks/compare/v1.1.0...v1.2.0) (2025-06-30)
 
 
